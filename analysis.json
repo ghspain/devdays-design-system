@@ -1,0 +1,975 @@
+[
+ {
+  "deck": "copilot-CLI",
+  "dir": "/mnt/c/Users/svg15/.copilot/session-state/68ede89c-bc04-4434-b89d-b5bd7555dc4f/files/devdays-decks/assets/cli",
+  "slide_size": {
+   "emu": [
+    12192000,
+    6858000
+   ],
+   "inches": [
+    13.33,
+    7.5
+   ],
+   "ratio": 1.778
+  },
+  "theme": {
+   "palette": {
+    "dk1": "000000",
+    "lt1": "FFFFFF",
+    "dk2": "E4EBE5",
+    "lt2": "232824",
+    "accent1": "BEFFD0",
+    "accent2": "8BF1A6",
+    "accent3": "5EEC83",
+    "accent4": "087827",
+    "accent5": "DBFF95",
+    "accent6": "D3FA36",
+    "hlink": "EEF6FC",
+    "folHlink": "56CCC4"
+   },
+   "fonts": {
+    "major(headings)": {
+     "latin": "Arial",
+     "ea": ""
+    },
+    "minor(body)": {
+     "latin": "Arial",
+     "ea": ""
+    }
+   }
+  },
+  "slide_count": 22,
+  "color_usage_top": [
+   [
+    "000000",
+    65
+   ],
+   [
+    "FFFFFF",
+    42
+   ],
+   [
+    "5FED83",
+    14
+   ],
+   [
+    "5EEC83",
+    9
+   ],
+   [
+    "8A11AF",
+    7
+   ],
+   [
+    "08872B",
+    4
+   ],
+   [
+    "8CF2A6",
+    3
+   ],
+   [
+    "0C1116",
+    3
+   ],
+   [
+    "D3FA36",
+    1
+   ],
+   [
+    "C16EFF",
+    1
+   ],
+   [
+    "9EECFF",
+    1
+   ],
+   [
+    "3194FF",
+    1
+   ],
+   [
+    "010101",
+    1
+   ]
+  ],
+  "distinct_colors": 13,
+  "font_usage": [
+   [
+    "Aptos",
+    241
+   ],
+   [
+    "+mn-lt",
+    124
+   ],
+   [
+    "Mona Sans Display",
+    86
+   ],
+   [
+    "Consolas",
+    32
+   ],
+   [
+    "Arial",
+    4
+   ],
+   [
+    "Mona Sans Mono",
+    2
+   ]
+  ],
+  "font_size_pt_top": [
+   [
+    16.0,
+    26
+   ],
+   [
+    12.0,
+    10
+   ],
+   [
+    36.0,
+    8
+   ],
+   [
+    14.67,
+    6
+   ],
+   [
+    10.5,
+    3
+   ],
+   [
+    14.0,
+    2
+   ],
+   [
+    39.99,
+    1
+   ],
+   [
+    10.0,
+    1
+   ],
+   [
+    35.99,
+    1
+   ],
+   [
+    24.0,
+    1
+   ]
+  ],
+  "layout_usage": [
+   [
+    "1_Title and image stacked",
+    5
+   ],
+   [
+    "Roadmap slide_1 feature stacked",
+    2
+   ],
+   [
+    "Blank",
+    2
+   ],
+   [
+    "Copilot Roadmap slide_2 features",
+    2
+   ],
+   [
+    "Title &amp; Subtitle",
+    2
+   ],
+   [
+    "Blank entirely",
+    1
+   ],
+   [
+    "Large statement",
+    1
+   ],
+   [
+    "Security feature specific 2",
+    1
+   ],
+   [
+    "Four statements",
+    1
+   ],
+   [
+    "Title &amp; Content",
+    1
+   ],
+   [
+    "Title and Content",
+    1
+   ],
+   [
+    "Three Statements",
+    1
+   ],
+   [
+    "Section",
+    1
+   ],
+   [
+    "Thank you ",
+    1
+   ]
+  ],
+  "media_by_type": {
+   "png": 52,
+   "svg": 4,
+   "jpeg": 2,
+   "mp4": 1
+  },
+  "media_total_mb": 7.7,
+  "notable_media": [
+   {
+    "file": "image11.png",
+    "kb": 1384,
+    "dim": [
+     3840,
+     2160
+    ]
+   },
+   {
+    "file": "image7.png",
+    "kb": 779,
+    "dim": [
+     2000,
+     1125
+    ]
+   },
+   {
+    "file": "image56.png",
+    "kb": 681,
+    "dim": [
+     1490,
+     730
+    ]
+   },
+   {
+    "file": "image2.png",
+    "kb": 349,
+    "dim": [
+     1082,
+     1216
+    ]
+   },
+   {
+    "file": "image38.png",
+    "kb": 285,
+    "dim": [
+     750,
+     750
+    ]
+   },
+   {
+    "file": "image52.png",
+    "kb": 278,
+    "dim": [
+     1416,
+     860
+    ]
+   },
+   {
+    "file": "image51.png",
+    "kb": 247,
+    "dim": [
+     1416,
+     860
+    ]
+   },
+   {
+    "file": "image13.png",
+    "kb": 245,
+    "dim": [
+     1548,
+     832
+    ]
+   },
+   {
+    "file": "image47.png",
+    "kb": 241,
+    "dim": [
+     1416,
+     860
+    ]
+   },
+   {
+    "file": "image44.png",
+    "kb": 215,
+    "dim": [
+     2064,
+     1096
+    ]
+   },
+   {
+    "file": "image48.png",
+    "kb": 209,
+    "dim": [
+     1416,
+     860
+    ]
+   },
+   {
+    "file": "media1.mp4",
+    "kb": 188,
+    "dim": null
+   },
+   {
+    "file": "image49.png",
+    "kb": 177,
+    "dim": [
+     1416,
+     860
+    ]
+   },
+   {
+    "file": "image50.jpeg",
+    "kb": 169,
+    "dim": [
+     1599,
+     1034
+    ]
+   },
+   {
+    "file": "image4.png",
+    "kb": 167,
+    "dim": [
+     2000,
+     1126
+    ]
+   }
+  ]
+ },
+ {
+  "deck": "copilot-app-english",
+  "dir": "/mnt/c/Users/svg15/.copilot/session-state/68ede89c-bc04-4434-b89d-b5bd7555dc4f/files/devdays-decks/assets/app-en",
+  "slide_size": {
+   "emu": [
+    12188825,
+    6858000
+   ],
+   "inches": [
+    13.33,
+    7.5
+   ],
+   "ratio": 1.777
+  },
+  "theme": {
+   "palette": {
+    "dk1": "000000",
+    "lt1": "FFFFFF",
+    "dk2": "091F2C",
+    "lt2": "E8E6DF",
+    "accent1": "00A4EF",
+    "accent2": "7FBA00",
+    "accent3": "F25022",
+    "accent4": "E1D3C7",
+    "accent5": "FFB900",
+    "accent6": "D9D9D6",
+    "hlink": "8DC8E8",
+    "folHlink": "C5B4E3"
+   },
+   "fonts": {
+    "major(headings)": {
+     "latin": "Segoe UI Semibold",
+     "ea": ""
+    },
+    "minor(body)": {
+     "latin": "Segoe UI",
+     "ea": ""
+    }
+   }
+  },
+  "slide_count": 17,
+  "color_usage_top": [
+   [
+    "000000",
+    119
+   ],
+   [
+    "FFFFFF",
+    45
+   ],
+   [
+    "5FED83",
+    14
+   ],
+   [
+    "5EEC83",
+    9
+   ],
+   [
+    "121613",
+    4
+   ],
+   [
+    "B870FF",
+    4
+   ],
+   [
+    "08872B",
+    4
+   ],
+   [
+    "8CF2A6",
+    3
+   ],
+   [
+    "26115F",
+    2
+   ],
+   [
+    "C898FD",
+    2
+   ],
+   [
+    "D3FA36",
+    1
+   ],
+   [
+    "C16EFF",
+    1
+   ],
+   [
+    "9EECFF",
+    1
+   ],
+   [
+    "3194FF",
+    1
+   ],
+   [
+    "8A11AF",
+    1
+   ]
+  ],
+  "distinct_colors": 15,
+  "font_usage": [
+   [
+    "Mona Sans Display",
+    96
+   ],
+   [
+    "Mona Sans",
+    20
+   ],
+   [
+    "Arial",
+    10
+   ],
+   [
+    "Mona Sans Display Medium",
+    8
+   ],
+   [
+    "Mona Sans Mono",
+    5
+   ],
+   [
+    "Aptos",
+    1
+   ]
+  ],
+  "font_size_pt_top": [
+   [
+    12.0,
+    14
+   ],
+   [
+    36.0,
+    8
+   ],
+   [
+    14.67,
+    6
+   ],
+   [
+    10.5,
+    3
+   ],
+   [
+    60.0,
+    3
+   ],
+   [
+    39.99,
+    1
+   ],
+   [
+    10.0,
+    1
+   ],
+   [
+    35.99,
+    1
+   ]
+  ],
+  "layout_usage": [
+   [
+    "1_Title and image stacked",
+    5
+   ],
+   [
+    "Roadmap slide_1 feature stacked",
+    3
+   ],
+   [
+    "Blank entirely",
+    3
+   ],
+   [
+    "Blank",
+    2
+   ],
+   [
+    "Large statement",
+    1
+   ],
+   [
+    "Roadmap slide_1 feature reversed",
+    1
+   ],
+   [
+    "Title &amp; Subtitle",
+    1
+   ],
+   [
+    "Section",
+    1
+   ]
+  ],
+  "media_by_type": {
+   "svg": 5,
+   "png": 53,
+   "jpeg": 3,
+   "emf": 1,
+   "mp4": 5
+  },
+  "media_total_mb": 36.2,
+  "notable_media": [
+   {
+    "file": "image14.png",
+    "kb": 6716,
+    "dim": [
+     3840,
+     2160
+    ]
+   },
+   {
+    "file": "media5.mp4",
+    "kb": 5687,
+    "dim": null
+   },
+   {
+    "file": "image10.png",
+    "kb": 4125,
+    "dim": [
+     3840,
+     2160
+    ]
+   },
+   {
+    "file": "image7.png",
+    "kb": 3150,
+    "dim": [
+     1920,
+     2160
+    ]
+   },
+   {
+    "file": "image13.png",
+    "kb": 1812,
+    "dim": [
+     3840,
+     2160
+    ]
+   },
+   {
+    "file": "image8.png",
+    "kb": 1384,
+    "dim": [
+     3840,
+     2160
+    ]
+   },
+   {
+    "file": "media4.mp4",
+    "kb": 1338,
+    "dim": null
+   },
+   {
+    "file": "media3.mp4",
+    "kb": 1205,
+    "dim": null
+   },
+   {
+    "file": "media1.mp4",
+    "kb": 1017,
+    "dim": null
+   },
+   {
+    "file": "image56.png",
+    "kb": 981,
+    "dim": [
+     2592,
+     1240
+    ]
+   },
+   {
+    "file": "media2.mp4",
+    "kb": 980,
+    "dim": null
+   },
+   {
+    "file": "image58.png",
+    "kb": 800,
+    "dim": [
+     2592,
+     1240
+    ]
+   },
+   {
+    "file": "image57.png",
+    "kb": 777,
+    "dim": [
+     2592,
+     1240
+    ]
+   },
+   {
+    "file": "image55.png",
+    "kb": 556,
+    "dim": [
+     2592,
+     1240
+    ]
+   },
+   {
+    "file": "image59.png",
+    "kb": 469,
+    "dim": [
+     1630,
+     807
+    ]
+   }
+  ]
+ },
+ {
+  "deck": "copilot-app-spanish",
+  "dir": "/mnt/c/Users/svg15/.copilot/session-state/68ede89c-bc04-4434-b89d-b5bd7555dc4f/files/devdays-decks/assets/app-es",
+  "slide_size": {
+   "emu": [
+    12188825,
+    6858000
+   ],
+   "inches": [
+    13.33,
+    7.5
+   ],
+   "ratio": 1.777
+  },
+  "theme": {
+   "palette": {
+    "dk1": "000000",
+    "lt1": "FFFFFF",
+    "dk2": "091F2C",
+    "lt2": "E8E6DF",
+    "accent1": "00A4EF",
+    "accent2": "7FBA00",
+    "accent3": "F25022",
+    "accent4": "E1D3C7",
+    "accent5": "FFB900",
+    "accent6": "D9D9D6",
+    "hlink": "8DC8E8",
+    "folHlink": "C5B4E3"
+   },
+   "fonts": {
+    "major(headings)": {
+     "latin": "Segoe UI Semibold",
+     "ea": ""
+    },
+    "minor(body)": {
+     "latin": "Segoe UI",
+     "ea": ""
+    }
+   }
+  },
+  "slide_count": 16,
+  "color_usage_top": [
+   [
+    "000000",
+    127
+   ],
+   [
+    "FFFFFF",
+    45
+   ],
+   [
+    "5FED83",
+    14
+   ],
+   [
+    "5EEC83",
+    9
+   ],
+   [
+    "121613",
+    4
+   ],
+   [
+    "B870FF",
+    4
+   ],
+   [
+    "08872B",
+    4
+   ],
+   [
+    "8CF2A6",
+    3
+   ],
+   [
+    "26115F",
+    2
+   ],
+   [
+    "C898FD",
+    2
+   ],
+   [
+    "D3FA36",
+    1
+   ],
+   [
+    "C16EFF",
+    1
+   ],
+   [
+    "9EECFF",
+    1
+   ],
+   [
+    "3194FF",
+    1
+   ],
+   [
+    "8A11AF",
+    1
+   ]
+  ],
+  "distinct_colors": 15,
+  "font_usage": [
+   [
+    "Mona Sans Display",
+    102
+   ],
+   [
+    "Mona Sans",
+    20
+   ],
+   [
+    "Arial",
+    10
+   ],
+   [
+    "Mona Sans Display Medium",
+    8
+   ],
+   [
+    "Mona Sans Mono",
+    5
+   ],
+   [
+    "Aptos",
+    1
+   ]
+  ],
+  "font_size_pt_top": [
+   [
+    12.0,
+    14
+   ],
+   [
+    10.5,
+    11
+   ],
+   [
+    14.67,
+    6
+   ],
+   [
+    60.0,
+    2
+   ],
+   [
+    39.99,
+    1
+   ],
+   [
+    10.0,
+    1
+   ],
+   [
+    35.99,
+    1
+   ],
+   [
+    36.0,
+    1
+   ]
+  ],
+  "layout_usage": [
+   [
+    "1_Title and image stacked",
+    5
+   ],
+   [
+    "Roadmap slide_1 feature stacked",
+    3
+   ],
+   [
+    "Blank entirely",
+    3
+   ],
+   [
+    "Blank",
+    2
+   ],
+   [
+    "Large statement",
+    1
+   ],
+   [
+    "Roadmap slide_1 feature reversed",
+    1
+   ],
+   [
+    "Title &amp; Subtitle",
+    1
+   ]
+  ],
+  "media_by_type": {
+   "svg": 5,
+   "png": 53,
+   "jpeg": 3,
+   "emf": 1,
+   "mp4": 5
+  },
+  "media_total_mb": 36.2,
+  "notable_media": [
+   {
+    "file": "image14.png",
+    "kb": 6716,
+    "dim": [
+     3840,
+     2160
+    ]
+   },
+   {
+    "file": "media5.mp4",
+    "kb": 5687,
+    "dim": null
+   },
+   {
+    "file": "image10.png",
+    "kb": 4125,
+    "dim": [
+     3840,
+     2160
+    ]
+   },
+   {
+    "file": "image7.png",
+    "kb": 3150,
+    "dim": [
+     1920,
+     2160
+    ]
+   },
+   {
+    "file": "image13.png",
+    "kb": 1812,
+    "dim": [
+     3840,
+     2160
+    ]
+   },
+   {
+    "file": "image8.png",
+    "kb": 1384,
+    "dim": [
+     3840,
+     2160
+    ]
+   },
+   {
+    "file": "media4.mp4",
+    "kb": 1338,
+    "dim": null
+   },
+   {
+    "file": "media3.mp4",
+    "kb": 1205,
+    "dim": null
+   },
+   {
+    "file": "media1.mp4",
+    "kb": 1017,
+    "dim": null
+   },
+   {
+    "file": "image56.png",
+    "kb": 981,
+    "dim": [
+     2592,
+     1240
+    ]
+   },
+   {
+    "file": "media2.mp4",
+    "kb": 980,
+    "dim": null
+   },
+   {
+    "file": "image58.png",
+    "kb": 800,
+    "dim": [
+     2592,
+     1240
+    ]
+   },
+   {
+    "file": "image57.png",
+    "kb": 777,
+    "dim": [
+     2592,
+     1240
+    ]
+   },
+   {
+    "file": "image55.png",
+    "kb": 556,
+    "dim": [
+     2592,
+     1240
+    ]
+   },
+   {
+    "file": "image59.png",
+    "kb": 469,
+    "dim": [
+     1630,
+     807
+    ]
+   }
+  ]
+ }
+]

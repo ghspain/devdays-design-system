@@ -1,0 +1,166 @@
+/* ============================================================
+   GitHub Copilot DevDays — design tokens para Slidev
+   (ver design.md §6.1; fuentes Mona Sans oficiales en public/fonts, SIL OFL)
+   ============================================================ */
+
+/* Mona Sans (Text/Display comparten el archivo variable: ejes wdth+opsz+wght) */
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('/fonts/MonaSans-var.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 50% 200%;
+  font-style: normal;
+  font-display: swap;
+}
+/* Mona Sans Mono */
+@font-face {
+  font-family: 'Mona Sans Mono';
+  src: url('/fonts/MonaSansMono-var.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Canvas */
+  --slide-w: 1280px;
+  --slide-h: 720px;
+  --gutter: 64px;
+
+  /* Backgrounds (dark-only) */
+  --bg: #000000;
+  --bg-elev-1: #0c1116;
+  --bg-elev-2: #121613;
+  --bg-elev-3: #101411;
+
+  /* Copilot greens (primary accent) */
+  --green: #5eec83;
+  --green-deep: #087827;
+  --green-soft: #8bf1a6;
+  --green-mint: #beffd0;
+
+  /* Lime (pop accent) */
+  --lime: #d3fa36;
+  --lime-soft: #dbff95;
+
+  /* Copilot purple (AI accent) */
+  --purple: #b870ff;
+  --purple-bright: #c16eff;
+  --purple-soft: #c898fd;
+  --purple-deep: #8a11af;
+  --purple-ink: #26115f;
+
+  /* Support */
+  --blue: #3194ff;
+  --cyan: #9eecff;
+  --teal: #56ccc4;
+
+  /* Text */
+  --c-text: #ffffff;
+  --c-text-muted: #8b949e;
+
+  /* Gradients */
+  --grad-ai: linear-gradient(120deg, var(--purple) 0%, var(--blue) 55%, var(--cyan) 100%);
+  --grad-green: linear-gradient(120deg, var(--green-deep) 0%, var(--green) 50%, var(--lime) 100%);
+
+  /* Type */
+  --font-display: 'Mona Sans', 'Inter', system-ui, sans-serif;
+  --font-body: 'Mona Sans', 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Mona Sans Mono', 'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+  /* Slidev overrides */
+  --slidev-theme-accents: var(--green);
+}
+
+/* ---- Base ---- */
+html, #app, .slidev-layout {
+  background: var(--bg) !important;
+  color: var(--c-text) !important;
+  font-family: var(--font-body) !important;
+  font-variation-settings: 'wdth' 100;
+}
+
+.slidev-layout {
+  padding: var(--gutter);
+  font-size: 21px; /* body 16pt */
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display) !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.02em;
+  color: var(--c-text) !important;
+}
+h1 { font-size: 52px; }  /* H1 36–40pt */
+h2 { font-size: 32px; }  /* H2 24pt */
+h3 { font-size: 24px; }
+
+p, li { color: var(--c-text); }
+strong { color: var(--green); font-weight: 600; }
+em { color: var(--purple-soft); }
+
+a { color: var(--blue); }
+
+code, kbd, pre, .mono { font-family: var(--font-mono) !important; }
+:not(pre) > code {
+  background: var(--bg-elev-1);
+  color: var(--green-soft);
+  padding: 0.1em 0.4em;
+  border-radius: 6px;
+}
+slidev-code, pre { background: var(--bg-elev-1) !important; }
+
+/* ---- Utilidades de marca ---- */
+.grad-ai {
+  background: var(--grad-ai);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.grad-green {
+  background: var(--grad-green);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.accent-green { color: var(--green); }
+.accent-purple { color: var(--purple); }
+.accent-lime { color: var(--lime); }
+.muted { color: var(--c-text-muted); }
+
+.card {
+  background: var(--bg-elev-1);
+  border: 1px solid #1b232b;
+  border-radius: 14px;
+  padding: 20px 24px;
+}
+.chip {
+  display: inline-block;
+  background: var(--lime);
+  color: #000;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 2px 14px;
+  font-size: 14px;
+}
+.kbd {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--c-text-muted);
+}
+
+/* Halo decorativo estilo Copilot (esquina) */
+.halo::after {
+  content: '';
+  position: absolute;
+  inset: auto -10% -30% auto;
+  width: 60%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle at center, var(--purple-ink) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+.halo-green::after {
+  background: radial-gradient(circle at center, var(--green-deep) 0%, transparent 65%);
+  opacity: 0.35;
+}
