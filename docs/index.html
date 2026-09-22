@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Copilot DevDays · Sistema de diseño + plantilla Slidev</title>
+<meta name="description" content="Análisis de diseño, assets y plantilla Slidev basados en las decks oficiales de GitHub Copilot DevDays (github/dev-days, release 2026-07-30).">
+<style>
+@font-face{font-family:'Mona Sans';src:url('fonts/MonaSans-var.woff2') format('woff2-variations');font-weight:200 900;font-stretch:50% 200%;font-style:normal;font-display:swap}
+@font-face{font-family:'Mona Sans Mono';src:url('fonts/MonaSansMono-var.woff2') format('woff2-variations');font-weight:200 900;font-style:normal;font-display:swap}
+
+:root{
+  --bg:#000;--bg-1:#0C1116;--bg-2:#121613;--bg-3:#101411;
+  --green:#5EEC83;--green-soft:#8BF1A6;--mint:#BEFFD0;--green-deep:#08872B;
+  --lime:#D3FA36;--purple:#B870FF;--purple-bright:#C16EFF;--purple-soft:#C898FD;--purple-ink:#26115F;
+  --blue:#3194FF;--cyan:#9EECFF;--teal:#56CCC4;
+  --text:#fff;--muted:#8B949E;--line:rgba(255,255,255,.1);
+  --grad-ai:linear-gradient(120deg,#B870FF 0%,#3194FF 55%,#9EECFF 100%);
+  --grad-green:linear-gradient(120deg,#5EEC83 0%,#D3FA36 100%);
+  --sans:'Mona Sans','Segoe UI',system-ui,sans-serif;
+  --mono:'Mona Sans Mono','Consolas',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-weight:650;letter-spacing:-.02em;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(38px,6.2vw,80px)}
+h2{font-size:clamp(26px,3.4vw,40px)}
+h3{font-size:21px}
+.mono{font-family:var(--mono)}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+
+nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.72);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:22px;height:58px}
+.brand{display:flex;align-items:center;gap:9px;font-weight:700;color:#fff;font-size:15px}
+.dot{width:11px;height:11px;border-radius:50%;background:var(--grad-green)}
+nav .links{display:flex;gap:18px;margin-left:auto;font-size:14px;flex-wrap:wrap}
+nav .links a{color:var(--muted)}
+nav .links a:hover{color:#fff;text-decoration:none}
+
+.hero{position:relative;overflow:hidden;padding:88px 0 64px;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;width:640px;height:640px;right:-180px;top:-220px;border-radius:50%;background:var(--grad-ai);filter:blur(130px);opacity:.28;pointer-events:none}
+.hero::after{content:"";position:absolute;width:420px;height:420px;left:-140px;bottom:-220px;border-radius:50%;background:var(--grad-green);filter:blur(120px);opacity:.16;pointer-events:none}
+.hero .wrap{position:relative}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--bg-1);color:var(--green-soft);border-radius:999px;padding:6px 14px;font-family:var(--mono);font-size:13px;margin-bottom:22px}
+.lead{font-size:clamp(18px,2.1vw,23px);color:var(--muted);max-width:720px;margin:0 0 30px}
+.lead b{color:var(--purple-soft);font-weight:600}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:10px;font-weight:600;font-size:16px;border:1px solid transparent;transition:transform .12s ease,box-shadow .12s ease}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn-primary{background:var(--green);color:#04140A;box-shadow:0 2px 8px rgba(0,0,0,.5)}
+.btn-ghost{border-color:var(--line);color:#fff;background:var(--bg-1)}
+.stats{display:flex;gap:34px;flex-wrap:wrap;margin-top:46px}
+.stat span{display:block;font-size:34px;font-weight:700;letter-spacing:-.02em}
+.stat small{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+section>h2{margin-bottom:6px}
+.sub{color:var(--muted);margin:0 0 30px;max-width:760px}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.card{background:var(--bg-1);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{margin-bottom:6px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+
+.sw{border-radius:12px;border:1px solid var(--line);overflow:hidden;background:var(--bg-1)}
+.sw i{display:block;height:74px}
+.sw b,.sw em{display:block;padding:9px 12px 0;font-family:var(--mono);font-size:13px;font-style:normal}
+.sw em{color:var(--muted);padding-bottom:11px;font-size:12px}
+.grad{height:100px;border-radius:12px;border:1px solid var(--line);display:flex;align-items:flex-end;padding:12px;font-family:var(--mono);font-size:13px;color:#04140A;font-weight:600}
+
+.type-row{display:flex;align-items:baseline;gap:18px;padding:14px 0;border-bottom:1px dashed var(--line);flex-wrap:wrap}
+.type-row code{font-family:var(--mono);font-size:13px;color:var(--muted);min-width:118px}
+.t-hero{font-size:80px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.t-h1{font-size:52px;font-weight:650;letter-spacing:-.02em}
+.t-h2{font-size:32px;font-weight:600}
+.t-body{font-size:21px}
+.t-small{font-size:16px}
+.t-micro{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{border:1px solid var(--line);background:var(--bg-1);color:var(--muted);border-radius:999px;padding:8px 16px;font-family:var(--mono);font-size:13px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--green);color:#04140A;border-color:var(--green);font-weight:700}
+.frames{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:12px}
+.frames figure{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg-1)}
+.frames img{display:block;width:100%;height:auto}
+.frames figcaption{font-family:var(--mono);font-size:11px;color:var(--muted);padding:6px 9px}
+
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+td.mono{font-size:13px;word-break:break-all}
+.pin{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:22px;margin-top:26px}
+.pin h3{color:var(--purple-soft);display:flex;align-items:center;gap:9px}
+.pin h3::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--purple);transform:rotate(45deg)}
+pre{background:var(--bg-1);border:1px solid var(--line);border-radius:12px;padding:18px;overflow:auto;font-family:var(--mono);font-size:13.5px;line-height:1.7;margin:0}
+pre .k{color:var(--purple-soft)}
+pre .s{color:var(--green-soft)}
+pre .c{color:var(--muted)}
+footer{padding:38px 0 60px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand"><span class="dot"></span>DevDays Design System</span>
+    <span class="links">
+      <a href="#paleta">Paleta</a>
+      <a href="#tipografia">Tipografía</a>
+      <a href="#plantilla">Plantilla</a>
+      <a href="#previews">Previews</a>
+      <a href="#decks">Decks</a>
+      <a href="#fuente">Fuente</a>
+      <a href="https://github.com/ghspain/devdays-design-system">Repo</a>
+    </span>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">github/dev-days · release 2026-07-30 · MIT</span>
+    <h1>El sistema de diseño de<br>GitHub Copilot <span style="background:var(--grad-green);-webkit-background-clip:text;background-clip:text;color:transparent">DevDays</span></h1>
+    <p class="lead">Análisis completo de las 3 presentaciones oficiales (CLI, App EN, App ES) y su
+      traducción a una <b>plantilla Slidev</b> lista para usar: paleta, Mona Sans, 6 layouts y
+      tokens CSS.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="deck/">▶ Ver la presentación</a>
+      <a class="btn btn-ghost" href="https://github.com/ghspain/devdays-design-system">Código en GitHub</a>
+      <a class="btn btn-ghost" href="https://github.com/ghspain/devdays-design-system/blob/main/design.md">design.md</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><span style="color:var(--green)">55</span><small>slides analizadas</small></div>
+      <div class="stat"><span style="color:var(--lime)">3</span><small>decks → PDF</small></div>
+      <div class="stat"><span style="color:var(--purple)">6</span><small>layouts Slidev</small></div>
+      <div class="stat"><span style="color:var(--cyan)">14</span><small>tokens de color</small></div>
+    </div>
+  </div>
+</header>
+
+<section id="paleta">
+  <div class="wrap">
+    <h2>Paleta</h2>
+    <p class="sub">Extraída del <b>uso real</b> en las cajas de texto (frecuencia en el XML), no del
+      <span class="mono">theme1.xml</span> — que solo trae colores de relleno de Office. Tema
+      <b>dark-only</b>: negro puro y casi-negros con tinte frío, más los dos acentos de marca de Copilot.</p>
+    <div class="grid g4">
+      <div class="sw"><i style="background:#000"></i><b>#000000</b><em>bg / base</em></div>
+      <div class="sw"><i style="background:#0C1116"></i><b>#0C1116</b><em>bg / elevated-1</em></div>
+      <div class="sw"><i style="background:#121613"></i><b>#121613</b><em>bg / elevated-2</em></div>
+      <div class="sw"><i style="background:#101411"></i><b>#101411</b><em>bg / elevated-3</em></div>
+      <div class="sw"><i style="background:#5EEC83"></i><b>#5EEC83</b><em>green / brand ★</em></div>
+      <div class="sw"><i style="background:#8BF1A6"></i><b>#8BF1A6</b><em>green / soft</em></div>
+      <div class="sw"><i style="background:#BEFFD0"></i><b>#BEFFD0</b><em>green / mint</em></div>
+      <div class="sw"><i style="background:#08872B"></i><b>#08872B</b><em>green / deep</em></div>
+      <div class="sw"><i style="background:#D3FA36"></i><b>#D3FA36</b><em>lime / pop</em></div>
+      <div class="sw"><i style="background:#B870FF"></i><b>#B870FF</b><em>purple / AI ★</em></div>
+      <div class="sw"><i style="background:#C898FD"></i><b>#C898FD</b><em>purple / soft</em></div>
+      <div class="sw"><i style="background:#26115F"></i><b>#26115F</b><em>purple / ink</em></div>
+      <div class="sw"><i style="background:#3194FF"></i><b>#3194FF</b><em>blue / enlaces</em></div>
+      <div class="sw"><i style="background:#9EECFF"></i><b>#9EECFF</b><em>cyan / detalle</em></div>
+      <div class="sw"><i style="background:#56CCC4"></i><b>#56CCC4</b><em>teal</em></div>
+      <div class="sw"><i style="background:#8B949E"></i><b>#8B949E</b><em>text / muted</em></div>
+    </div>
+    <div class="grid g3" style="margin-top:16px">
+      <div class="grad" style="background:var(--grad-green)">--grad-green</div>
+      <div class="grad" style="background:var(--grad-ai);color:#fff">--grad-ai</div>
+      <div class="card" style="display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;border-style:dashed">Halos y titulares «AI»<br>degradados sobre negro</div>
+    </div>
+  </div>
+</section>
+
+<section id="tipografia">
+  <div class="wrap">
+    <h2>Tipografía</h2>
+    <p class="sub">El tema declara Arial/Segoe UI, pero el uso real es la pila de GitHub:
+      <b>Mona Sans</b> (open-source, SIL OFL) para titulares y cuerpo, <b>Mona Sans Mono</b> para código.
+      Pocos niveles y tamaños grandes. Escala detectada (pt → px @96dpi):</p>
+    <div class="type-row"><code>80px · 60pt</code><span class="t-hero">Una idea por slide</span></div>
+    <div class="type-row"><code>52px · 36–40pt</code><span class="t-h1">H1 · título de diapositiva</span></div>
+    <div class="type-row"><code>32px · 24pt</code><span class="t-h2">H2 · subtítulo de sección</span></div>
+    <div class="type-row"><code>21px · 16pt</code><span class="t-body">Body grande · el caballo de batalla del deck CLI</span></div>
+    <div class="type-row"><code>16px · 12–14pt</code><span class="t-small">Body · texto de apoyo y captions</span></div>
+    <div class="type-row"><code>13px · 10pt</code><span class="t-micro">Micro · etiquetas, fuentes, paginación</span></div>
+    <div class="type-row" style="border-bottom:0"><code>mono</code><span class="mono" style="font-size:19px;color:var(--green-soft)">const accent = '#5EEC83' // Mona Sans Mono</span></div>
+  </div>
+</section>
+
+<section id="plantilla">
+  <div class="wrap">
+    <h2>Plantilla Slidev</h2>
+    <p class="sub">Implementación funcional del sistema de diseño: 6 layouts, tokens CSS, fuentes
+      self-hosted y 7 slides de ejemplo. Ratio 16:9 (1280×720).</p>
+    <div class="grid g3">
+      <div class="card"><h3 class="mono" style="color:var(--green)">cover</h3><p>Titular grande + halo degradado + kicker en lima.</p></div>
+      <div class="card"><h3 class="mono" style="color:var(--green)">section</h3><p>Separador de capítulo con número gigante.</p></div>
+      <div class="card"><h3 class="mono" style="color:var(--green)">two-cols</h3><p>Texto + captura de producto sobre panel elevado.</p></div>
+      <div class="card"><h3 class="mono" style="color:var(--purple)">code</h3><p>Bloque de código con caption de archivo en mono.</p></div>
+      <div class="card"><h3 class="mono" style="color:var(--purple)">roadmap</h3><p>Tarjetas numeradas reveladas con <span class="mono">v-click</span>.</p></div>
+      <div class="card"><h3 class="mono" style="color:var(--cyan)">quote</h3><p>Statement slide de texto a pantalla completa.</p></div>
+    </div>
+    <pre style="margin-top:22px"><span class="c"># clonar y arrancar</span>
+git clone https://github.com/ghspain/devdays-design-system.git
+cd devdays-design-system/slidev-template
+npm install
+npm run dev      <span class="c"># localhost:3030</span>
+
+<span class="c"># slides.md → slot sugar de Slidev v51 (ya no existe el fragmento "--")</span>
+<span class="k">---</span>
+<span class="k">layout:</span> cover
+<span class="k">---</span>
+<span class="s"># GitHub Copilot DevDays</span>
+<span class="s">::second::</span>
+Una idea por slide.
+<span class="s">::second::</span></pre>
+    <p class="small muted" style="margin-top:16px">⚠️ Slidev v51 reescribió el sistema de fragments:
+      usa marcadores de slot <span class="mono">::nombre::</span> (una línea completa) o
+      <span class="mono">&lt;v-click&gt;</span>. El <span class="mono">--</span> clásico se renderiza como texto literal.
+      Detalle en <a href="https://github.com/ghspain/devdays-design-system/blob/main/slidev-template/README.md">slidev-template/README.md</a>.</p>
+  </div>
+</section>
+
+<section id="previews">
+  <div class="wrap">
+    <h2>Previews de los decks</h2>
+    <p class="sub">Las 55 diapositivas originales renderizadas PNG (PDF → imagen). Pasa el ratón por
+      encima para verlas en grande en el <a href="deck/">deck interactivo</a>… o ábrelas directas.</p>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="frames" id="frames"></div>
+  </div>
+</section>
+
+<section id="decks">
+  <div class="wrap">
+    <h2>Decks y PDFs</h2>
+    <p class="sub">Conversión a PDF con LibreOffice headless (Docker under WSL2). Enlace al PDF
+      alojado en el repo y descarga original del <span class="mono">.pptx</span>.</p>
+    <table>
+      <thead><tr><th>Deck</th><th>Slides</th><th>PDF (este repo)</th><th>.pptx original (fijado)</th></tr></thead>
+      <tbody>
+        <tr><td>copilot-CLI</td><td>22</td><td><a href="https://github.com/ghspain/devdays-design-system/blob/main/pdf/copilot-CLI.pdf">ver PDF</a></td><td><a href="https://github.com/github/dev-days/releases/download/2026-07-30/copilot-CLI.pptx">descargar</a></td></tr>
+        <tr><td>copilot-app-english</td><td>17</td><td><a href="https://github.com/ghspain/devdays-design-system/blob/main/pdf/copilot-app-english.pdf">ver PDF</a></td><td><a href="https://github.com/github/dev-days/releases/download/2026-07-30/copilot-app-english.pptx">descargar</a></td></tr>
+        <tr><td>copilot-app-spanish</td><td>16</td><td><a href="https://github.com/ghspain/devdays-design-system/blob/main/pdf/copilot-app-spanish.pdf">ver PDF</a></td><td><a href="https://github.com/github/dev-days/releases/download/2026-07-30/copilot-app-spanish.pptx">descargar</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="fuente">
+  <div class="wrap">
+    <h2>Fuente y atribución</h2>
+    <p class="sub">Todo el material derivado procede del repositorio público
+      <a href="https://github.com/github/dev-days"><b>github/dev-days</b></a> (licencia MIT) de GitHub.
+      Como el origen puede publicar más releases, se <b>fija la versión exacta</b> utilizada.</p>
+    <div class="pin">
+      <h3>📌 Versión fijada</h3>
+      <table>
+        <tbody>
+          <tr><th style="width:190px">Repositorio</th><td class="mono">github/dev-days</td></tr>
+          <tr><th>Release tag</th><td class="mono"><a href="https://github.com/github/dev-days/releases/tag/2026-07-30">2026-07-30</a></td></tr>
+          <tr><th>Release ID</th><td class="mono">362731584</td></tr>
+          <tr><th>Publicada</th><td class="mono">2026-07-31T16:08:05Z</td></tr>
+          <tr><th>Commit de la rama</th><td class="mono">main (sin SHA fijado por el tag)</td></tr>
+          <tr><th>Licencia original</th><td class="mono">MIT</td></tr>
+        </tbody>
+      </table>
+      <p class="small muted" style="margin:16px 0 0">Assets concretos de esa release de los que se
+        derivaron PDFs, previews y análisis (los 7 del release, aquí solo 3):</p>
+      <table style="margin-top:8px">
+        <thead><tr><th>Asset</th><th>Tamaño</th><th>URL de descarga inmutable</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">copilot-CLI.pptx</td><td class="mono">7.94 MB</td><td class="mono"><a href="https://github.com/github/dev-days/releases/download/2026-07-30/copilot-CLI.pptx">releases/download/2026-07-30/copilot-CLI.pptx</a></td></tr>
+          <tr><td class="mono">copilot-app-english.pptx</td><td class="mono">38.72 MB</td><td class="mono"><a href="https://github.com/github/dev-days/releases/download/2026-07-30/copilot-app-english.pptx">…/copilot-app-english.pptx</a></td></tr>
+          <tr><td class="mono">copilot-app-spanish.pptx</td><td class="mono">38.32 MB</td><td class="mono"><a href="https://github.com/github/dev-days/releases/download/2026-07-30/copilot-app-spanish.pptx">…/copilot-app-spanish.pptx</a></td></tr>
+        </tbody>
+      </table>
+      <p class="small" style="margin:16px 0 0">La tipografía <b>Mona Sans</b> incluida en la plantilla
+        pertenece a <a href="https://github.com/github/mona-sans">github/mona-sans</a> (SIL Open Font
+        License). Los media de <span class="mono">copilot-app-spanish.pptx</span> son byte-idénticos a
+        los de la versión inglesa, por lo que no se duplican en el repositorio.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="dot" style="display:inline-block;vertical-align:middle;margin-right:8px"></span>
+    DevDays Design System · contenido derivado de <a href="https://github.com/github/dev-days">github/dev-days</a>
+    (release <span class="mono">2026-07-30</span>, MIT) · análisis y plantilla bajo <a href="https://github.com/ghspain/devdays-design-system/blob/main/LICENSE">MIT</a> ·
+    <a href="https://github.com/ghspain/devdays-design-system">GitHub</a>
+  </div>
+</footer>
+
+<script>
+const RAW = 'https://raw.githubusercontent.com/ghspain/devdays-design-system/main/previews/';
+const DECKS = [
+  { id: 'cli', label: 'copilot-CLI', slides: 22 },
+  { id: 'app-en', label: 'copilot-app-english', slides: 17 },
+  { id: 'app-es', label: 'copilot-app-spanish', slides: 16 }
+];
+const tabs = document.getElementById('tabs');
+const frames = document.getElementById('frames');
+function pad(n) { return String(n).padStart(2, '0'); }
+function show(deck) {
+  frames.innerHTML = '';
+  for (let i = 1; i <= deck.slides; i++) {
+    const src = RAW + deck.id + '/slide-' + pad(i) + '.png';
+    const fig = document.createElement('figure');
+    const img = document.createElement('img');
+    img.src = src; img.loading = 'lazy'; img.alt = deck.label + ' slide ' + i;
+    img.onclick = () => window.open(src, '_blank');
+    img.style.cursor = 'zoom-in';
+    const cap = document.createElement('figcaption');
+    cap.textContent = deck.id + '/slide-' + pad(i);
+    fig.append(img, cap);
+    frames.append(fig);
+  }
+  [...tabs.children].forEach(t => t.setAttribute('aria-selected', t.dataset.id === deck.id));
+}
+DECKS.forEach((d, i) => {
+  const b = document.createElement('button');
+  b.className = 'tab'; b.dataset.id = d.id; b.textContent = d.label + ' · ' + d.slides;
+  b.onclick = () => show(d);
+  tabs.append(b);
+  if (i === 0) show(d);
+});
+</script>
+</body>
+</html>

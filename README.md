@@ -3,18 +3,37 @@
 Análisis de diseño, assets y plantilla **Slidev** de las presentaciones oficiales de
 [GitHub Copilot DevDays](https://github.com/github/dev-days) (2026).
 
-## 🔗 Origen y atribución
+> 🌐 **Demo en vivo:** <https://ghspain.github.io/devdays-design-system/>
+> (landing con paleta, tipografía, galería de las 55 slides y el
+> [deck Slidev interactivo](https://ghspain.github.io/devdays-design-system/deck/)).
+
+## 🔗 Origen y atribución (versión fijada)
 
 Los materiales originales proceden del repositorio público
-**[`github/dev-days`](https://github.com/github/dev-days)** (licencia **MIT**):
+**[`github/dev-days`](https://github.com/github/dev-days)** (licencia **MIT**).
+Como el repositorio de origen puede publicar más releases, se fija **la versión exacta**
+de la que se descargaron los `.pptx`:
 
-- [`copilot-CLI.pptx`](https://github.com/github/dev-days/releases/tag/2026-07-30)
-- `copilot-app-english.pptx`
-- `copilot-app-spanish.pptx`
+| Campo | Valor |
+|---|---|
+| Release tag | [`2026-07-30`](https://github.com/github/dev-days/releases/tag/2026-07-30) |
+| Release ID | `362731584` |
+| Publicada | `2026-07-31T16:08:05Z` |
+| Nombre | *Dev Days Presentation Decks* |
+| Assets totales del release | 7 (5 idiomas de `copilot-app-*` + `copilot-CLI`) |
+| Licencia original | MIT |
 
-(assets del release `2026-07-30`). Este repositorio contiene **derivados** de esos
-decks — conversiones a PDF, assets extraídos, análisis de diseño y una plantilla
-Slidev propia — publicados con fines educativos y con atribución a GitHub.
+De esa release se usaron **exactamente** estos 3 assets (URLs de descarga inmutables):
+
+| Asset | Tamaño | Descarga |
+|---|---|---|
+| `copilot-CLI.pptx` | 7.94 MB | <a href="https://github.com/github/dev-days/releases/download/2026-07-30/copilot-CLI.pptx">releases/download/2026-07-30/copilot-CLI.pptx</a> |
+| `copilot-app-english.pptx` | 38.72 MB | <a href="https://github.com/github/dev-days/releases/download/2026-07-30/copilot-app-english.pptx">…/copilot-app-english.pptx</a> |
+| `copilot-app-spanish.pptx` | 38.32 MB | <a href="https://github.com/github/dev-days/releases/download/2026-07-30/copilot-app-spanish.pptx">…/copilot-app-spanish.pptx</a> |
+
+Este repositorio contiene **derivados** de esos decks — conversiones a PDF, assets
+extraídos, análisis de diseño y una plantilla Slidev propia — publicados con fines
+educativos y con atribución a GitHub.
 
 La tipografía **Mona Sans** incluida en la plantilla pertenece a
 [`github/mona-sans`](https://github.com/github/mona-sans) (licencia OFL).
@@ -29,9 +48,30 @@ La tipografía **Mona Sans** incluida en la plantilla pertenece a
 | [`previews/`](./previews/) | 55 previews PNG (una por slide) + `palette.png` |
 | [`assets/`](./assets/) | Media y XML extraídos de los `.pptx` (`cli/` y `app-en/`¹) |
 | [`slidev-template/`](./slidev-template/) | **Plantilla Slidev** que implementa el sistema de diseño |
+| [`docs/`](./docs/) | Sitio publicado en **GitHub Pages** (landing + build del deck) |
 
 ¹ *Los media de `copilot-app-spanish.pptx` son byte-idénticos a los de la versión
 inglesa, por lo que no se duplican en este repo.*
+
+## 🌐 GitHub Pages
+
+El sitio está servido desde la carpeta [`docs/`](./docs/) de la rama `main`:
+
+| URL | Contenido |
+|---|---|
+| <https://ghspain.github.io/devdays-design-system/> | Landing: paleta, tipografía, layouts, galería de 55 slides, PDFs y atribución |
+| <https://ghspain.github.io/devdays-design-system/deck/> | Presentación Slidev (la plantilla, exportada estática) |
+
+Para regenerar el deck tras tocar `slides.md` / layouts / estilos:
+
+```bash
+cd slidev-template
+npx slidev build --base /devdays-design-system/deck/ --out dist
+# copiar dist/ -> docs/deck/ (sin fonts/, que viven en docs/fonts/) y subir
+```
+
+> El `--base` es obligatorio: un GitHub Pages de proyecto se sirve bajo
+> `/<repo>/`, no en la raíz del dominio.
 
 ## 🚀 Plantilla Slidev
 
