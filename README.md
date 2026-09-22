@@ -3,9 +3,10 @@
 Análisis de diseño, assets y plantilla **Slidev** de las presentaciones oficiales de
 [GitHub Copilot DevDays](https://github.com/github/dev-days) (2026).
 
-> 🌐 **Demo en vivo:** <https://ghspain.github.io/devdays-design-system/>
+> 🌐 **Demo en vivo:** <https://githubcommunity.es/devdays-design-system/>
 > (landing con paleta, tipografía, galería de las 55 slides y el
-> [deck Slidev interactivo](https://ghspain.github.io/devdays-design-system/deck/)).
+> [deck Slidev interactivo](https://githubcommunity.es/devdays-design-system/deck/)).
+> Alternativa: `ghspain.github.io/devdays-design-system`.
 
 ## 🔗 Origen y atribución (versión fijada)
 
@@ -55,23 +56,32 @@ inglesa, por lo que no se duplican en este repo.*
 
 ## 🌐 GitHub Pages
 
-El sitio está servido desde la carpeta [`docs/`](./docs/) de la rama `main`:
+El sitio está servido desde la carpeta [`docs/`](./docs/) de la rama `main`. La
+organización `ghspain` usa dominio propio, así que existen dos URLs equivalentes:
 
 | URL | Contenido |
 |---|---|
-| <https://ghspain.github.io/devdays-design-system/> | Landing: paleta, tipografía, layouts, galería de 55 slides, PDFs y atribución |
-| <https://ghspain.github.io/devdays-design-system/deck/> | Presentación Slidev (la plantilla, exportada estática) |
+| <https://githubcommunity.es/devdays-design-system/> | Landing: paleta, tipografía, layouts, galería de 55 slides, PDFs y atribución |
+| <https://githubcommunity.es/devdays-design-system/deck/> | Presentación Slidev (la plantilla, exportada estática) |
+| <https://ghspain.github.io/devdays-design-system/> | misma landing en el dominio por defecto de Pages |
+| <https://ghspain.github.io/devdays-design-system/deck/> | mismo deck en el dominio por defecto de Pages |
 
 Para regenerar el deck tras tocar `slides.md` / layouts / estilos:
 
 ```bash
 cd slidev-template
+npm install
 npx slidev build --base /devdays-design-system/deck/ --out dist
-# copiar dist/ -> docs/deck/ (sin fonts/, que viven en docs/fonts/) y subir
+# 1. vaciar docs/deck/ y copiar ahí TODO el contenido de dist/
+#    (incluye fonts/ e img/, que son parte del build)
+# 2. copiar dist/404.html -> docs/404.html  (fallback SPA: enlaces directos a /deck/7)
+# 3. commit + push; Pages reconstruye solo
 ```
 
 > El `--base` es obligatorio: un GitHub Pages de proyecto se sirve bajo
-> `/<repo>/`, no en la raíz del dominio.
+> `/<repo>/`, no en la raíz del dominio (y aquí además el deck vive en `/<repo>/deck/`).
+> Por el mismo motivo, las imágenes del frontmatter (`image: /img/...`) se resuelven en
+> `layouts/feature.vue` concatenando `import.meta.env.BASE_URL`, no en crudo.
 
 ## 🚀 Plantilla Slidev
 
