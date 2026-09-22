@@ -18,7 +18,16 @@ import { computed } from 'vue'
 import { useSlideContext } from '@slidev/client'
 
 const { $frontmatter } = useSlideContext()
-const image = computed(() => $frontmatter?.image)
+
+// Las rutas de /public del frontmatter deben llevar el base de despliegue
+// (GitHub Pages: /<repo>/deck/); en dev el base es "/" y queda igual.
+const image = computed(() => {
+  const src = $frontmatter?.image
+  if (!src) return null
+  if (/^(https?:|data:|\/\/)/.test(src)) return src
+  const base = import.meta.env.BASE_URL || '/'
+  return base.replace(/\/$/, '') + '/' + String(src).replace(/^\//, '')
+})
 </script>
 
 <style scoped>
